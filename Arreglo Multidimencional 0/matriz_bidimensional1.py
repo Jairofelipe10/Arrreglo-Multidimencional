@@ -2,7 +2,7 @@
 
 def buscar_valor(matriz, valor_registrado):
     """
-    Función matriz bidimensional
+    Función matriz bidimensional inicio
     """
     for i in range(len(matriz)):
         for j in range(len(matriz[0])):

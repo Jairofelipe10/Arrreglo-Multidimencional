@@ -1,12 +1,12 @@
 # Búsqueda de matriz bidimensional
 
-def buscar_valor(matriz, valor_buscado):
+def buscar_valor(matriz, valor_registrado):
     """
     Función matriz bidimensional
     """
     for i in range(len(matriz)):
         for j in range(len(matriz[0])):
-            if matriz[i][j] == valor_buscado:
+            if matriz[i][j] == valor_registrado:
                 return True, (i, j)  # La posición
     return False, None  # Retorna False si en verdad no se encuentra
 

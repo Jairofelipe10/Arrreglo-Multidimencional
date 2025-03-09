@@ -1,4 +1,4 @@
-# Definir la matriz 3D de temperaturas en grados Celsius (°C)
+# Matriz 3D de temperaturas en grados Celsius (°C) Napo-Ecuador
 # Primera dimensión: Ciudades (Archidona, Tena, Chaco)
 # Segunda dimensión: Semanas (4 semanas)
 # Tercera dimensión: Días de la semana (Lunes,Martes, Miercoles, Jueves, Viernes, Sabado, domingo)

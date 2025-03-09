@@ -128,7 +128,7 @@ for ciudad, nombre_ciudad in zip(temperaturas, ciudades):
         suma_temperaturas = sum(dia['temp'] for dia in semana)
         promedio = suma_temperaturas / len(semana)
         print(f"{nombre_ciudad}, Semana {numero_semana}: Promedio de temperatura = {promedio:.2f}°C")
-        # Mostrar las temperaturas diarias de la semana
+        # Temperaturas diarias de la semana
         for dia in semana:
             print(f"    {dia['day']}: {dia['temp']}°C")
         numero_semana += 1  # Incrementamos el contador de semanas

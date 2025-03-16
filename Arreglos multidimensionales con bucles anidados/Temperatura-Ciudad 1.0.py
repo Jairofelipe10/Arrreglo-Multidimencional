@@ -1,3 +1,4 @@
+# Promedio temperatura
 # Matriz 3D de temperaturas en grados Celsius (°C) Napo-Ecuador
 temperaturas = [
     [  # Archidona
@@ -33,7 +34,8 @@ temperaturas = [
             {"day": "Martes", "temp": 25},
             {"day": "Miércoles", "temp": 26},
             {"day": "Jueves", "temp": 23},
-            {"day": "Viernes", "temp": 27}, {"day": "Sábado", "temp": 29},
+            {"day": "Viernes", "temp": 27},
+            {"day": "Sábado", "temp": 29},
             {"day": "Domingo", "temp": 31}
         ]
     ],
@@ -115,11 +117,11 @@ temperaturas = [
     ]
 ]
 
-# Lista de nombres de ciudades
+# Ciudades de la pronvinica de Napo
 ciudades = ["Archidona", "Tena", "Chaco"]
 
 
-# Función para calcular la temperatura promedio de una ciudad
+# Calcular la temperatura promedio de una ciudad
 def calcular_promedio_ciudad(datos_temperaturas, nombre_ciudad):
     """
     Calcula la temperatura promedio de una ciudad durante todas las semanas disponibles.
@@ -129,31 +131,32 @@ def calcular_promedio_ciudad(datos_temperaturas, nombre_ciudad):
         nombre_ciudad (str): Nombre de la ciudad ("Archidona", "Tena" o "Chaco").
 
     Retorna:
-        float: Promedio de temperaturas de la ciudad especificada.
+        float: Promedio de temperaturas de la ciudad especificada o mensaje de error.
     """
-    # Encontrar el índice de la ciudad en la lista de ciudades
+
+#Manejo de errores de una ciudad ingresada
     try:
         indice_ciudad = ciudades.index(nombre_ciudad)
     except ValueError:
         return f"Error: La ciudad '{nombre_ciudad}' no está en la lista."
 
-    # Obtener los datos de la ciudad específica
+#Calculo de la temperatura promedio de una ciudad específica
     ciudad = datos_temperaturas[indice_ciudad]
-
-    # Sumar todas las temperaturas de la ciudad
     suma_total = 0
     total_dias = 0
     for semana in ciudad:
         for dia in semana:
             suma_total += dia["temp"]
             total_dias += 1
-
-    # Calcular el promedio
     promedio = suma_total / total_dias
     return promedio
 
 
-# Pruebas de la función
-for ciudad in ciudades:
-    promedio = calcular_promedio_ciudad(temperaturas, ciudad)
-    print(f"Temperatura promedio en {ciudad}: {promedio:.2f}°C")
+# Sección única para preguntar una ciudad
+print("Ciudades disponibles:", ciudades)
+ciudad_elegida = input("¿De qué ciudad te interesa conocer la temperatura promedio? ¿Pregunta aki no hay Problema? ")
+resultado = calcular_promedio_ciudad(temperaturas, ciudad_elegida)
+if isinstance(resultado, str):  # Si es un mensaje de error
+    print(resultado)
+else:
+    print(f"El promedio de temperatura en {ciudad_elegida} es: {resultado:.2f}°C")

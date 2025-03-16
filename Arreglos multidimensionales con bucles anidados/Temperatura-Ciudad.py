@@ -1,3 +1,4 @@
+# Hola
 # Matriz 3D de temperaturas en grados Celsius (°C) Napo-Ecuador
 # Primera dimensión: Ciudades (Archidona, Tena, Chaco)
 # Segunda dimensión: Semanas (4 semanas)
